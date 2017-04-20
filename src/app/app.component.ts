@@ -24,11 +24,16 @@ export class AppComponent {
   p3 = new Persona("Maria", "Maria@gmail.com", 23);
   p4 = new Persona("Josè", "jose@gmail.com", 85);
   datos = [this.p1, this.p2, this.p3, this.p4];
+  //datos = [];
 
   settings={
     columns:{
       Nombre:{
-        title:"Nombre"
+        title:"Nombre",
+        editable:false,
+        editor:{
+          type:"textarea"
+        }
       },
       Email:{
         title:"Email"
@@ -36,6 +41,21 @@ export class AppComponent {
       Edad:{
         title:"Edad"
       }
+    },
+    pager:{
+      perPage:2
+    },
+    noDataMessage:"No hay datos",
+    actions:{
+      edit:true,
+      add:true,
+      delete:true
+    },
+    edit:{
+      editButtonContent:"Editar",
+      createButtonContent:"Crear",
+      cancelButtonContent:"Cancelar",
+      confirmSave:true
     }
   };
 
@@ -45,6 +65,9 @@ export class AppComponent {
   }
   miFuncion2(){
     this.log = false;
+  }
+  editar(event){
+    console.log(event);
   }
 }
 

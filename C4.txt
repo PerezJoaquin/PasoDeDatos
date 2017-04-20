@@ -1,0 +1,19 @@
+-Paso de datos:
+ *crear form
+ *usar tag Name
+ *ngIf con I
+ *ngFor con F
+  -dentro del ngFor se pueden usar variables ya cargadas como Index, First, Last, Even, y Odd
+
+Binding:
+ *{{datos}} de js a html
+ *[propiedad] //leer binding
+ *[(ngBind)]
+ *(evento)
+
+npm install --save ng2-smart-table
+-importarlo en module.ts
+-importarlo en el ts de la pagina en la que se va a usar
+-crear <ng2-smart-table [settings]="setings" [source]="datos"></ngs-smart-table>
+ *settings y datos son objetos que vienen del .ts
+ *dentro de settings los objetos en columnas deben tener el mismo nombre que las propiedades de los onjetos en datos
