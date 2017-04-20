@@ -1,0 +1,24 @@
+<h3 *ngFor="let item of datos; let i = index">
+  {{item.nombre}}<br>
+  {{item.email}}<br>
+  {{item.edad}}<br>
+  {{i}}
+</h3>
+<div *ngIf="!log">
+  <form>
+    <input type="text" name="nombre" [(ngModel)]="Form.nombre">
+    <input type="text" name="email" [(ngModel)]="Form.email">
+    <input type="button" (click)="miFuncion($event)">
+  </form>
+</div>
+<div *ngIf="log">
+  <form>
+    <input type="button" value="logout" (click)="miFuncion2()">
+  </form>
+</div>
+
+<ng2-smart-table
+  [settings]="settings"
+  [source]="datos"
+>
+</ng2-smart-table>
